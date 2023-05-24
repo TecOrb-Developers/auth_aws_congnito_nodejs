@@ -1,0 +1,134 @@
+.wrapper-content {
+    padding: 20px 10px 40px;
+  }
+  .ibox-title {
+    border-width: 0px 0px 0;
+  }
+  .ibox-title {
+    border-width: 0px 0px 0;
+  }
+  .tabs-container .nav-tabs {
+    border-bottom: 1px solid transparent;
+    margin-bottom: 15px;
+  }
+  .tabs-container .nav-tabs > li.active > a,
+  .tabs-container .nav-tabs > li.active > a:hover,
+  .tabs-container .nav-tabs > li.active > a:focus {
+    border: 1px solid transparent;
+    border-bottom-color: transparent;
+    background: transparent;
+  }
+  .row-item {
+    border: 1px solid #e7eaec;
+    border-radius: 3px;
+    padding: 16px !important;
+  }
+  .row-item:hover {
+    box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.1);
+  }
+  .tab-pane .panel-body .content-box {
+    padding: 0px 0px;
+  }
+  .img-box {
+    width: 162px;
+    height: 162px;
+    overflow: hidden;
+  }
+  .img-box img {
+    width: 100%;
+    height: 100%;
+  }
+  .content-box p,
+  .technician p {
+    /* font-size: 13px; */
+    line-height: 21px;
+    margin: 0 0 6px;
+  }
+  .content-box p.description {
+    margin-bottom: 20px;
+  }
+  .content-box p > span,
+  .technician p > span {
+    font-weight: 600;
+  }
+  .button-sec {
+    padding: 45px 28px;
+  }
+  .button-sec .btn {
+    width: 100px;
+    display: block;
+    float: right;
+    margin-right: 15px;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    width: 100%;
+  }
+  
+  ul li {
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+  }
+  .active {
+    background-color: #1ab394;
+    border-color: #1ab394;
+  }
+  
+  .btn-default.active:focus {
+    background-color: #1ab394;
+    border-color: #1ab394;
+    color: #ffffff;
+  }
+  .btn-default.active:hover {
+    background-color: #1ab394;
+    border-color: #1ab394;
+    color: #ffffff;
+  }
+  li .btn {
+    position: relative;
+    display: inline-block;
+    width: 125px;
+    text-align: center;
+  }
+  .btn img {
+    max-width: 20px;
+    max-height: 20px;
+  }
+  
+  .tooltiptext {
+    visibility: hidden;
+    min-width: 220px;
+    max-width: 100%;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  
+    top: -35px;
+    left: -10px;
+  }
+  
+  .btn:hover .tooltiptext {
+    visibility: visible;
+  }
+  .my-pagination /deep/ .ngx-pagination .current {
+    background: #1ab394;
+  }
+  h2 span button {
+    margin-bottom: 10px;
+  }
+  @media (min-width: 768px) {
+    #page-wrapper {
+      position: inherit;
+      margin: 0 0 0 5px;
+    }
+  }
+  

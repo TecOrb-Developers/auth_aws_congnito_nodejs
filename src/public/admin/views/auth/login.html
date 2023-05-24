@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin | Name</title>
+    <link rel="icon" href="../../admin/assets/img/favicon.png" type="image">
+    <link href="../../admin/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="../../admin/assets/css/animate.css" rel="stylesheet">
+    <link href="../../admin/assets/css/style.css" rel="stylesheet">
+    
+
+</head>
+
+<body  onload="mainFunction()" >
+
+    <div class="middle-box loginscreen animated fadeInDown" style="margin-top: 100px;">
+        <div>
+
+
+            <center>
+              
+                <img alt="image" class="" style="width: 250px;"
+                src="../../admin/assets/img/adminlogo.jpg"/>
+
+                <h3>Welcome to  Admin</h3>
+                <p>Login in. To see it in action.</p>
+            </center>
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="Username"    id="email" name="email"  >
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password"    id="password" name="password" >
+            </div>
+            <button class="btn btn-primary block full-width m-b"  id="btnId" onclick="login()">Login</button>
+
+            
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="../../admin/assets/js/jquery-3.1.1.min.js"></script>
+    <script src="../../admin/assets/js/popper.min.js"></script>
+    <script src="../../admin/assets/js/bootstrap.js"></script>
+    <script>
+        var host = window.location.protocol + "//" + window.location.host;
+        function mainFunction() {
+            var token = localStorage.getItem("token");
+            if (token) {
+                window.location.replace('/admin/dashboard');
+            }
+        }
+
+  //******Search value by Enter**************/
+  $("#password").keyup(function (event) {
+            if (event.keyCode === 13) {
+                $("#btnId").click();
+            }
+        });
+       
+    </script>
+    <script src="../../admin/scripts/auth/login.js"></script>
+</body>
+
+</html>
+
