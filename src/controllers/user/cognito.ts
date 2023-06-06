@@ -11,11 +11,12 @@ function signUp(body: any): Promise<any> {
     return new Promise(async (resolve, reject) => {
         try {
             const { email, password, name, phoneNumber } = body;
+            console.log(body,"body")
             const params = {
                 ClientId: cognitoConfig.clientId,
                 Username: email,
                 Password: password,
-                UserAttributes: [{ Name: 'name', Value: name }, { Name: 'phone_number', Value: phoneNumber }]
+                UserAttributes: [{ Name: 'name', Value: name }, { Name: 'phone_number', Value: "+916678756778" }]
             };
             const response = await cognito.signUp(params).promise();
             console.log('User signed up successfully:', response);
@@ -80,8 +81,8 @@ function login(body: any): Promise<any> {
                     PASSWORD: password,
                 },
             };
-            const response = await cognito.initiateAuth(params).promise();
-            console.log('User authenticated successfully:', response);
+            const response:any = await cognito.initiateAuth(params).promise();
+           // console.log('User authenticated successfully:', response);
             resolve({ result: response })
         } catch (err) {
             console.error('user login error:', err.message);

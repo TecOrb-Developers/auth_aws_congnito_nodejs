@@ -203,3 +203,55 @@ node dist/index.js
   }
 
 ```
+
+### This test case verifies the functionality of creating a new user
+
+### Post Type API (http://localhost:{port}/api/v1/user/cognito/signUp)
+
+- Test Case 1: "should create a new user"
+
+It sends a POST request to the "/api/v1/user/cognito/signUp" endpoint with valid user data.
+Expects the response status code to be 201 (Created).
+Expects the response body to be { message: 'Signup sucessfully' }.
+
+- Test Case 2: "should return an error for duplicate email"
+
+First, it creates a user with the same email by sending a POST request to the "/api/v1/user/cognito/signUp" endpoint.
+Then, it sends another POST request to the same endpoint with the same user data.
+Expects the response status code to be 400 (Bad Request).
+Expects the response body to be { error: 'An account with the given email already exists' }.
+
+### This test case verifies the functionality of user authentication through the login API endpoint.
+
+### Post Type API (http://localhost:{port}/api/v1/user/cognito/login)
+
+- Test Case 1: "should authenticate a user and return a token"
+
+First, it creates a user by sending a POST request to the "/api/v1/user/cognito/login" endpoint.
+Then, it sends a POST request to the "/api/v1/user/cognito/login" endpoint with valid credentials.
+Expects the response status code to be 200 (OK).
+Expects the response body to have a property named 'token'.
+
+- Test Case 2: "should return an error for invalid credentials"
+
+It sends a POST request to the "/api/v1/user/cognito/login" endpoint with invalid credentials.
+Expects the response status code to be 401 (Unauthorized).
+Expects the response body to be { error: 'Invalid email or password' }.
+
+### This test case verifies the functionality of email verification using the verification OTP.
+
+### Post Type API (http://localhost:{port}/api/v1/user/cognito/confirm)
+
+- Test Case 1: "should verify user email"
+
+First, it creates a user by sending a POST request to the "/api/v1/user/cognito/signUp" endpoint.
+Retrieves the verification OTP from an eamil register at a time of signup.
+Then, it sends a post request to the "/api/v1/user/cognito/confirm" endpoint with the obtained OTP.
+Expects the response status code to be 200 (OK).
+Expects the response body to be { message: 'Email verified successfully' }.
+
+- Test Case 2: "should return an error for an invalid OTP"
+
+It sends a GET request to the "/api/v1/user/cognito/confirm" endpoint with an invalid OTP.
+Expects the response status code to be 400 (Bad Request).
+Expects the response body to be { error: 'Invalid OTP' }.

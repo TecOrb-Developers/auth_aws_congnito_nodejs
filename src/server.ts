@@ -11,6 +11,7 @@ import { CustomError } from '@utils/errors';
 import adminRoutesFE from './routes/admin-panel';
 import { connect, disconnect } from '@utils/database';
 import '@models/index';
+const cors = require("cors")
 // Constants
 const app = express();
 
@@ -50,7 +51,7 @@ app.get('/api/v1/pankaj', (req,res) =>{
     });
 });
 
-
+app.use(cors());
 
 // Error handling
 app.use((err: Error | CustomError, _: Request, res: Response, __: NextFunction) => {
